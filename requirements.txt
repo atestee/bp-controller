@@ -1,0 +1,17 @@
+Flask~=2.0.3
+Flask-RESTful
+requests
+flask-cors
+Werkzeug~=2.0.3
+six~=1.16.0
+pytz~=2021.3
+setuptools~=57.0.0
+aniso8601~=9.0.1
+pandas~=0.25.3
+geopandas~=0.10.2
+gtfstk~=10.0.7
+numpy~=1.22.2
+geojson~=2.5.0
+urllib3~=1.26.9
+argparse~=1.4.0
+Shapely~=1.8.1.post1
