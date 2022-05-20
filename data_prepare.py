@@ -7,6 +7,7 @@ from shapely.geometry import Polygon
 import db_utils
 
 
+# parse GeoJSON strings into dictionaries
 def parse_geojsons(clusters):
     for cluster in clusters:
         cluster["excludedResidentialBuildings"] = json.loads(cluster["excludedResidentialBuildings"])
@@ -16,13 +17,16 @@ def parse_geojsons(clusters):
     return clusters
 
 
-def get_properties_arrays(property, data) :
+# Extract the given property from all given residential buildings
+def get_properties_arrays(property, residential_buildings) :
     arr = []
-    for building in data["features"]:
+    for building in residential_buildings["features"]:
         arr.append(building["properties"][property])
     return arr
 
-
+# Cluster name is defined by the number of public transport stops it corresponds to
+# 1-3 stops: name = stop name separated by "-"
+# 4+ stops: name = <first-stop>-<last-stop>
 def add_cluster_name(data):
     for res in data:
         geography = res['geography']
@@ -93,6 +97,7 @@ def add_cluster_histograms(data, nbins, parameters):
     return data
 
 
+# Change the transit type from the GTFS id to route name
 def modify_transit_types(data):
     transit_types = {
         1: "metro",
@@ -106,6 +111,7 @@ def modify_transit_types(data):
     return data
 
 
+# Change the route id to route name
 def replace_route_identification(data):
     feed = gt.read_gtfs("gtfs.zip", dist_units='m')
     routes = feed.routes
@@ -144,7 +150,6 @@ def add_cluster_route_linestrings(data, city):
         cluster.pop("routeId")
 
     return data
-
 
 
 def prepare_data(data):
