@@ -23,17 +23,20 @@ database = mongo_utils.MONGO_DATABASE
 
 
 class AvailableCitiesController(Resource):
+    # GET /api/cities
+    # responds with the list of available
     def get(self):
         return db_utils.find_available_cites()
 
 
 class CityModelController(Resource):
+    # GET /api/city-model/<selected-city>
     def get(self, selected_city):
         return db_utils.find_one_city_model_by_name(selected_city)
 
 
-# controller for all jobs
 class JobListController(Resource):
+    # POST /api/job
     def post(self):
         startTime = datetime.now()
         req = request.get_json()
@@ -77,7 +80,6 @@ class JobListController(Resource):
         return res.json()
 
 
-# controller for one job
 class JobController(Resource):
     # GET request serving the job results corresponding to job_id
     def get(self, job_id):
