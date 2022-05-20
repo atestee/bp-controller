@@ -1,0 +1,1 @@
+{"jobId": "bad2261c-fcbb-4b9e-898d-82f04c65878a", "jobName": "Prague - Metro A", "startTime": "2022-05-18 23:46:23.575000", "endTime": "2022-05-18 23:51:06.430000", "status": "FINISHED", "parameters": {"minWalkingDistanceMeters": "200", "maxDrivingDistanceMeters": "2000", "maxTaxiRideDurationMinutes": "10", "numberOfPTStopsClustering": [{"transitType": 1, "numberOfStops": 3}]}}

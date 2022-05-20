@@ -1,0 +1,1 @@
+{"jobId": "3ee4c2bb-90dd-421c-9a08-202e9df35683", "jobName": "Prague - Tram 17", "startTime": "2022-05-17 17:31:21.695000", "endTime": "2022-05-17 17:34:13.186000", "status": "FINISHED", "parameters": {"minWalkingDistanceMeters": "300", "maxDrivingDistanceMeters": "1000", "maxTaxiRideDurationMinutes": "5", "numberOfPTStopsClustering": [{"transitType": 0, "numberOfStops": 3}]}}
